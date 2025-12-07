@@ -48,31 +48,7 @@
     <p id="date" style="font-size: 20px; font-weight: bold; text-align: center; color: blue;"></p>
 
 
-<script>
-    const days = ["Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"];
-    const months = ["Januarie", "Februarie", "Maart", "April", "Mei", "Junie",
-                    "Julie", "Augustus", "September", "Oktober", "November", "Desember"];
 
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const dayName = days[today.getDay()];
-    const mmm = months[today.getMonth()];
-    const ccyy = today.getFullYear();
-
-
-    document.getElementById("date").innerText = "Vandag is "  + dayName + " " + dd + " " + mmm + " " + ccyy;
-
-    
-    const tomorrow = new Date(today);
-    tomorrow.setDate(today.getDate() + 1); // Add 1 day
-    const tdayName = days[tomorrow.getDay()];
-    const tdd = String(tomorrow.getDate()).padStart(2, '0');
-    const tmmm = months[tomorrow.getMonth()];
-    const tccyy = tomorrow.getFullYear();
-   
-
-    document.getElementById("date2").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
-</script>
 
     <!-- Take vir vandag -->
     <p style="font-size: 24px;font-weight: bold; text-align: center; color: red;"">Hanro tel my 12uur op vir middagete by Hannelie</p>
