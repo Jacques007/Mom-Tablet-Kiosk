@@ -21,6 +21,11 @@
 <body>
 
 
+
+    <h1>Nuus vir vandag</h1>
+
+    <p id="date" style="font-size: 20px; font-weight: bold; text-align: center; color: blue;"></p>
+
 <script>
     const days = ["Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"];
     const months = ["Januarie", "Februarie", "Maart", "April", "Mei", "Junie",
@@ -35,14 +40,17 @@
 
     document.getElementById("date").innerText = "Vandag is "  + dayName + " " + dd + " " + mmm + " " + ccyy;
 
-    
+        const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1); // Add 1 day
+    const tdayName = days[tomorrow.getDay()];
+    const tdd = String(tomorrow.getDate()).padStart(2, '0');
+    const tmmm = months[tomorrow.getMonth()];
+    const tccyy = tomorrow.getFullYear();
+   
+
+    document.getElementById("date2").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
 
 </script>
-    <h1>Nuus vir vandag</h1>
-
-    <p id="date" style="font-size: 20px; font-weight: bold; text-align: center; color: blue;"></p>
-
-
 
 
     <!-- Take vir vandag -->
@@ -63,17 +71,7 @@
     <img src="MomTabletImage4.jpeg" alt="My picture" style="width:300px; display:block; margin:auto;">
 
 
- <script>
-    const tomorrow = new Date(today);
-    tomorrow.setDate(today.getDate() + 1); // Add 1 day
-    const tdayName = days[tomorrow.getDay()];
-    const tdd = String(tomorrow.getDate()).padStart(2, '0');
-    const tmmm = months[tomorrow.getMonth()];
-    const tccyy = tomorrow.getFullYear();
-   
 
-    document.getElementById("date2").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
-</script>
 
     <h1>Nuus vir more ?</h1>
     
