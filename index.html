@@ -30,11 +30,23 @@
     const dayName = days[today.getDay()];
     const mmm = months[today.getMonth()];
     const ccyy = today.getFullYear();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1); // Add 1 day
+    const tdayName = days[tomorrow.getDay()];
+    const tmdd = String(tomorrow.getDate()).padStart(2, '0');
+    const tmmm = months[tomorrow.getMonth()];
+    const tccyy = tomorrow.getFullYear();
 
+
+    
     document.getElementById("date").innerText = "Vandag is "  + dayName + " " + dd + " " + mmm + " " + ccyy;
+    document.getElementById("tomorrow").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
 </script>
 
+    <!-- Take vir vandag -->
     <p style="font-size: 24px;font-weight: bold; text-align: center; color: red;"">Hanro tel my 12uur op vir middagete by Hannelie</p>
+
+    <!-- Ander Notas vir die dag -->
     <p style="font-size: 24px;">Jacques en Lizelle se huweliksherdenking van 29 jaar</p>
     
     <img src="MomMainTabletImage.jpg" alt="My picture" style="width:300px; display:block; margin:auto;">
@@ -47,5 +59,15 @@
 
      <p style="font-size: 24px;">Kyk Hannelie se markie by Cape Gate</p>
     <img src="MomTabletImage4.jpeg" alt="My picture" style="width:300px; display:block; margin:auto;">
+
+
+    <h1>Nuus vir more ?</h1>
+    document.getElementById("tomorrow").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
+    <!-- Take vir more -->
+    <p style="font-size: 24px;font-weight: bold; text-align: center; color: red;"">Buh Rein versorger gaan met my stap kwart voor 9</p>
+
+    <!-- Ander Notas vir die dag -->
+    <p style="font-size: 24px;">More gaan 'n mooi dag wees</p>
+    
 </body>
 </html>
