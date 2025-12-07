@@ -63,11 +63,27 @@
 
     <h1>Nuus vir more ?</h1>
     document.getElementById("tomorrow").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
-    <!-- Take vir more -->
-    <p style="font-size: 24px;font-weight: bold; text-align: center; color: red;"">Buh Rein versorger gaan met my stap kwart voor 9</p>
 
     <!-- Ander Notas vir die dag -->
     <p style="font-size: 24px;">More gaan 'n mooi dag wees</p>
     
 </body>
+
+    <script>
+    const days = ["Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"];
+    const months = ["Januarie", "Februarie", "Maart", "April", "Mei", "Junie",
+                    "Julie", "Augustus", "September", "Oktober", "November", "Desember"];
+
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1); // Add 1 day
+    const tdayName = days[tomorrow.getDay()];
+    const tmdd = String(tomorrow.getDate()).padStart(2, '0');
+    const tmmm = months[tomorrow.getMonth()];
+    const tccyy = tomorrow.getFullYear();
+
+
+    
+    document.getElementById("tomorrow").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
+</script>
+
 </html>
