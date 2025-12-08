@@ -37,9 +37,41 @@
     
     <!--<img src="MomMainTabletImage.jpg" alt="My picture" style="width:300px; display:block; margin:auto;">-->
 
+   <!-- Boek... -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wrapped text from file</title>
+  <style>
+    .text-block {
+      white-space: pre-line;    /* respect \n line breaks but wrap long lines */
+      overflow-wrap: anywhere;  /* prevent long words/URLs from overflowing */
+      line-height: 1.6;         /* nicer readability */
+      max-width: 65ch;          /* optional: limit line width for readability */
+      margin: 1rem auto;        /* center block */
+      font-family: system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Kortverhaal</h1>
+  <div id="content" class="text-block">Loading…</div>
 
-    <div id="content" style="font-family: system-ui, sans-serif;"></div>
-    
+  <script>
+    fetch('content.txt')
+      .then(r => {
+        if (!r.ok) throw new Error('Failed to load content.txt');
+        return r.text();
+      })
+      .then(text => {
+        document.getElementById('content').textContent = text;
+      })
+      .catch(err => {
+        document.getElementById('content').textContent = 'Could not load content.';
+        console.error(err);
+      });
+  </script>
+</body>   
 
     <p style="font-size: 24px;">Hier sit ek lekker in Agulhas</p>
     <img src="MomTabletImage2.jpg" alt="My picture" style="width:300px; display:block; margin:auto;">
@@ -92,24 +124,7 @@
 
 </script>
 
-<script>
 
-        
-fetch('Stories.txt')
-    .then(res => res.text())
-    .then(text => {
-      const pre = document.createElement('pre');
-      pre.textContent = text; // preserves whitespace and line breaks
-      document.getElementById('content').appendChild(pre);
-    })
-    .catch(err => {
-      document.getElementById('content').textContent = 'Failed to load content.';
-      console.error(err);
-    });
-
-
-
-</script>
 
     
 </body>
