@@ -37,6 +37,10 @@
     
     <!--<img src="MomMainTabletImage.jpg" alt="My picture" style="width:300px; display:block; margin:auto;">-->
 
+
+    <div id="content" style="font-family: system-ui, sans-serif;"></div>
+    
+
     <p style="font-size: 24px;">Hier sit ek lekker in Agulhas</p>
     <img src="MomTabletImage2.jpg" alt="My picture" style="width:300px; display:block; margin:auto;">
 
@@ -86,6 +90,20 @@
 
     document.getElementById("date2").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
 
+
+
+        
+fetch('stories.txt')
+    .then(res => res.text())
+    .then(text => {
+      const pre = document.createElement('pre');
+      pre.textContent = text; // preserves whitespace and line breaks
+      document.getElementById('content').appendChild(pre);
+    })
+    .catch(err => {
+      document.getElementById('content').textContent = 'Failed to load content.';
+      console.error(err);
+    });
 
 
 
