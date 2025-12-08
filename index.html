@@ -90,10 +90,12 @@
 
     document.getElementById("date2").innerText = "More is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
 
+</script>
 
+<script>
 
         
-fetch('stories.txt')
+fetch('Stories.txt')
     .then(res => res.text())
     .then(text => {
       const pre = document.createElement('pre');
