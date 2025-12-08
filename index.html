@@ -58,7 +58,7 @@
   <div id="content" class="text-block">Loading…</div>
 
   <script>
-    fetch('content.txt')
+    fetch('Stories.txt')
       .then(r => {
         if (!r.ok) throw new Error('Failed to load content.txt');
         return r.text();
