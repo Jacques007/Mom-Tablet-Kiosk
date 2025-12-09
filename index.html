@@ -13,7 +13,8 @@
         h1 {
             color: darkblue;
         }
-   
+   </style>
+    <style>
   button {
     background-color: blue;
     color: white;
@@ -151,9 +152,17 @@
 
 
 
-<input type="button" value="Click Me" onclick="alert('Button clicked!')">
+<button class="whatsapp-btn" onclick="openWhatsApp()">Chat on WhatsApp</button>
 
-   
+  <script> 
+international format
+      const phoneNumber = "27845976056"; // Example: South Africa (+27)
+      const message = encodeURIComponent("Hello! I would like to chat.");
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
 
 
     <script>
