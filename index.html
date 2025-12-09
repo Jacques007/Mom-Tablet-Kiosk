@@ -164,9 +164,21 @@
 
     document.getElementById("date2").innerText = "Môre is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
 
+
+        
+const repo = "Mom-Tablet-Kiosk";
+const user = "Jacques007";
+fetch(`https://api.github.com/repos/${user}/${repo}`)
+  .then(response => response.json())
+  .then(data => {
+    const updatedDate = new Date(data.updated_at);
+    document.querySelector(".last-updated").textContent =
+      `Last updated: ${updatedDate.toDateString()}`;
+
 </script>
 
 
+    
 
     
 </body>
