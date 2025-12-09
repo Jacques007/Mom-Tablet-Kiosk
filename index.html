@@ -13,20 +13,7 @@
         h1 {
             color: darkblue;
         }
-     .btn {
-      display: inline-block;
-      margin: 1rem;
-      padding: 14px 24px;
-      font-size: 18px;
-      color: #fff;
-      background-color: #25D366; /* WhatsApp green */
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background-color: #1DA851;
-    }
+   
     </style>
 </head>
 
@@ -191,7 +178,7 @@
             .then(data => {
                 const updatedDate = new Date(data.updated_at);
                 document.querySelector(".last-updated").textContent =
-                    `Last updated: ${updatedDate.toDateString()}`;
+                    `Last updated:: ${updatedDate.toDateString()}`;
             })
             .catch(error => {
                 console.error("Error fetching data:", error);
@@ -199,10 +186,36 @@
                     "Could not load last updated date.";
             });
     </script>
+</body>
 
-    
- 
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mom Tablet Kiosk</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      margin: 1rem;
+      padding: 14px 24px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #25D366; /* WhatsApp green */
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #1DA851;
+    }
+  </style>
+</head>
+<body>
   <h1>Contact Family via WhatsApp</h1>
 
   <!-- Button for Jacques -->
@@ -210,14 +223,9 @@
   </a>
 
   <!-- Button for Hannelie -->
-  <a class="btn" href="https://wa.me/27821234567?textChat with Hannelie
+  <a class="btn" href="https://wa.me/27821234567?text=Hiat with Hannelie
   </a>
-
-
-
-    
 </body>
-
 
     
 
