@@ -45,6 +45,41 @@
     </button>
 
 
+
+
+ <form id="smsForm">
+    <label>
+      Recipient (E.164 intl format, e.g. +27):
+      <input name="to" placeholder="+2782..." required>
+    </label>
+    <label>
+      Message:
+      <textarea name="message" maxlength="500" required></textarea>
+    </label>
+    <button type="submit">Send SMS</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('smsForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const payload = {
+        to: fd.get('to'),
+        message: fd.get('message')
+      };
+      const res = await fetch('/api/send-sms', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+      const json = await res.json();
+      alert(json.ok ? 'SMS queued!' : `Error: ${json.error}`);
+    });
+  </script>
+
+
+    
     <h1>Nuus vir vandag?</h1>
 
     <p id="date" style="font-size: 20px; font-weight: bold; text-align: center; color: blue;"></p>
