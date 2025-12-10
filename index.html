@@ -25,6 +25,29 @@
 <body>
 
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Button</title>
+    <style>
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.location.href='tel:+1234567890'">Call Us</button>
+</body>
 
 
 
@@ -32,36 +55,6 @@
 
 
 
- <form id="smsForm">
-    <label>
-      Recipient (E.164 intl format, e.g. +27):
-      <input name="to" placeholder="+27845976056" required>
-    </label>
-    <label>
-      Message:
-      <textarea name="message" maxlength="500" required></textarea>
-    </label>
-    <button type="submit">Send SMS</button>
-  </form>
-
-  <script>
-    const form = document.getElementById('smsForm');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const fd = new FormData(form);
-      const payload = {
-        to: fd.get('to'),
-        message: fd.get('message')
-      };
-      const res = await fetch('/api/send-sms', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(payload)
-      });
-      const json = await res.json();
-      alert(json.ok ? 'SMS queued!' : `Error: ${json.error}`);
-    });
-  </script>
 
 
     
