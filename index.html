@@ -40,20 +40,63 @@
 <body>
 
 
-    
+
+
 <button id="callJacques">Kontak Jacques</button>
 
-<script>
-  document.getElementById('callJacques').addEventListener('click', function () {
-    const ok = confirm('Wil ma vir Jacques bel?');
-    if (ok) {
-      // Proceed to open the phone dialer
-      window.location.href = 'tel:+27845976056';
-    }
-    // If canceled, do nothing
-  });
+<!-- Custom confirmation modal -->
+<div id="confirmModal" class="modal" hidden>
+  <div class="modal-content">
+    <p>Are you sure you want to call Jacques?</p>
+    <div class="actions">
+      <button id="confirmYes">Yes</button>
+      <button id="confirmNo">No</button>
+    </div>
+  </div>
+</div>
 
-</script>    
+<style>
+  .modal {
+    position: fixed; inset: 0;
+    display: grid; place-items: center;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .modal[hidden] { display: none; }
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .actions { margin-top: 15px; display: flex; gap: 10px; justify-content: center; }
+  .actions button { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; }
+  #confirmYes { background: #007BFF; color: white; }
+  #confirmNo { background: #ccc; }
+</style>
+
+<script>
+  const callBtn = document.getElementById('callJacques');
+  const modal = document.getElementById('confirmModal');
+  const yesBtn = document.getElementById('confirmYes');
+  const noBtn = document.getElementById('confirmNo');
+
+  callBtn.addEventListener('click', () => modal.hidden = false);
+  yesBtn.addEventListener('click', () => {
+    modal.hidden = true;
+    window.location.href = 'tel:+27845976056';
+  });
+  noBtn.addEventListener('click', () => modal.hidden = true);
+</script>
+
+
+
+    
+
+
+    
+    
 <button id="callHannelie">Kontak Hannelie</button>
 
 <script>
