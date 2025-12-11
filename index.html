@@ -62,19 +62,19 @@
     
     <h1>Nuus vir vandag?</h1>
 
-    <p id="date" style="fnt-size: 2rem;x; font-weight: bold; text-align: center; color: blue;"></p>
+    <p id="date" style="fnt-size: 2rem;; font-weight: bold; text-align: center; color: blue;"></p>
 
 
-<div id="time" style="font-size: 2.5rem; font-weight: bold;"></div>
+    <div id="time" style="font-size: 2.5rem; font-weight: bold;"></div>
 
-<script>
-  function updateTime() {
-    const now = new Date();
-    const timeString = now.getHours().toString().padStart(2, '0') + ':' +
+    <script>
+          function updateTime() {
+          const now = new Date();
+          const timeString = now.getHours().toString().padStart(2, '0') + ':' +
                    now.getMinutes().toString().padStart(2, '0');
 
-    document.getElementById('time').textContent = timeString;
-  }
+          document.getElementById('time').textContent = timeString;
+          }
 
   updateTime(); // show immediately
   setInterval(updateTime,60000); // update every minute
@@ -84,25 +84,21 @@
 
 
     <!-- Take vir vandag -->
-    <p style="font-size: 2rem;font-weight: bold; text-align: center; color: red;"">Jacques kom by my werk</p>
+    <p style="font-size: 24px;font-weight: bold; text-align: center; color: red;"">Jacques kom by my werk</p>
 
     <!-- Ander Notas vir die dag -->
- <p style="font-size: 24px;">Hannelie pak vandag markie uit in Vredenburg</p>
+    <p style="font-size: 24px;">Hannelie pak vandag markie uit in Vredenburg</p>
 
-    
     <!-- Gedagte vir die dag -->
-
     <img src="MomMainTabletImage.jpg" alt="My picture" style="width:300px; display:block; margin:auto;">
 
     <!-- Ander Notas vir die dag -->
     <p style="font-size: 24px;">Vandag gaan warm wees- bly cool!</p>
 
-
     <h1>Nuus vir môre ?</h1>
-    <p id="date2" style="font-size: 2rem;; font-weight: bold; text-align: center; color: blue;"></p>
-
+    <p id="date2" style="font-size: 2rem;; font-weight: bold; text-align: center; color: blue;"></p
  
-     <p style="font-size: 24px;font-weight: bold; text-align: center; color: red;"">Jacques kom by my werk</p>
+    <p style="font-size: 24px;font-weight: bold; text-align: center; color: red;"">Jacques kom by my werk</p>
 
 
     
