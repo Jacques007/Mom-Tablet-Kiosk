@@ -62,9 +62,9 @@
           document.getElementById('time').textContent = timeString;
           }
 
-  updateTime(); // show immediately
-  setInterval(updateTime,60000); // update every minute
-</script>
+          updateTime(); // show immediately
+          setInterval(updateTime,60000); // update every minute
+     </script>
 
     
    
@@ -79,15 +79,14 @@
 
     <h1>Nuus vir môre ?</h1>
     <p id="date2" style="font-size: 2rem; font-weight: bold; text-align: center; color: blue;"></p>
- 
-    
-     <p style="font-size: 2rem;font-weight: bold; text-align: center; color: red;">Jacques kom by my werk</p>
+  
+    <p style="font-size: 2rem;font-weight: bold; text-align: center; color: red;">Jacques kom by my werk</p>
 
 
 
     
 
-<hr class="centered-line">
+   <hr class="centered-line">
     
    <!-- Boek... -->
   
@@ -153,35 +152,31 @@
 
 
     <script>
-    const days = ["Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"];
-    const months = ["Januarie", "Februarie", "Maart", "April", "Mei", "Junie",
+        const days = ["Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"];
+        const months = ["Januarie", "Februarie", "Maart", "April", "Mei", "Junie",
                     "Julie", "Augustus", "September", "Oktober", "November", "Desember"];
 
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const dayName = days[today.getDay()];
-    const mmm = months[today.getMonth()];
-    const ccyy = today.getFullYear();
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const dayName = days[today.getDay()];
+        const mmm = months[today.getMonth()];
+        const ccyy = today.getFullYear();
 
 
-    document.getElementById("date").innerText = "Vandag is "  + dayName + " " + dd + " " + mmm + " " + ccyy;
+        document.getElementById("date").innerText = "Vandag is "  + dayName + " " + dd + " " + mmm + " " + ccyy;
 
         const tomorrow = new Date(today);
-    tomorrow.setDate(today.getDate() + 1); // Add 1 day
-    const tdayName = days[tomorrow.getDay()];
-    const tdd = String(tomorrow.getDate()).padStart(2, '0');
-    const tmmm = months[tomorrow.getMonth()];
-    const tccyy = tomorrow.getFullYear();
-   
-
-    document.getElementById("date2").innerText = "Môre is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
+        tomorrow.setDate(today.getDate() + 1); // Add 1 day
+        const tdayName = days[tomorrow.getDay()];
+        const tdd = String(tomorrow.getDate()).padStart(2, '0');
+        const tmmm = months[tomorrow.getMonth()];
+        const tccyy = tomorrow.getFullYear();
         
-</script>
+        document.getElementById("date2").innerText = "Môre is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
+    </script>
 
 
-
-            
-     <p class="last-updated">Loading last updated date...</p>
+    <p class="last-updated">Loading last updated date...</p>
 
     <script>
         const user = "Jacques007";   // Replace with your GitHub username
@@ -200,7 +195,7 @@
                     "Could not load last updated date.";
             });
     </script>
-</body>
 
+</body>
 
 </html>
