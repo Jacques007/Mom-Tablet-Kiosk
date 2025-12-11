@@ -15,81 +15,191 @@
         h1 {
             color: darkblue;
         }
-   </style>
- 
-   <style>
-        button {
-            font-size: 30px;
-            padding: 10px 30px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+		
+	   .container {
+        width: min(92vw, 520px);
+        background: var(--bg);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+        text-align: center;
+      }
 
-        button:hover {
-            background-color: #0056b3;
-        }
-   </style>
-    
+		
+      .buttons {
+        display: grid;
+        gap: 12px;
+        margin-top: 8px;
+      }
 
-    
+      .btn {
+        font-size: 30px;
+        padding: 10px 13px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #fff;
+        transition: transform .06s ease, filter .2s ease;
+      }
+      .btn:active { transform: scale(0.98); }
+
+      .btn-jacques { background: var(--primary); }
+      .btn-hannelie { background: var(--danger); }
+      .btn-jacques:hover { filter: brightness(1.05); }
+      .btn-hannelie:hover { filter: brightness(1.05); }
+
+   /* Modal styles */
+      .modal {
+        position: fixed; inset: 0;
+        display: grid; place-items: center;
+        background: rgba(0,0,0,0.35);
+        z-index: 1000;
+      }
+      .modal[hidden] { display: none; }
+
+      .modal-dialog {
+        width: min(92vw, 420px);
+        background: #fff;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 12px 36px rgba(0,0,0,.25);
+      }
+
+      .modal-title {
+        font-size: 1.1rem;
+        margin: 0 0 10px 0;
+      }
+
+      .modal-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 10px;
+      }
+
+      .modal-btn {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .modal-btn.primary { background: var(--primary); color: #fff; }
+      .modal-btn.neutral { background: #eceff1; color: #333; }
+
+      /* Accessibility helpers */
+      .visually-hidden {
+        position: absolute !important;
+        height: 1px; width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        white-space: nowrap;
+      }
+
+   </style>
+  
 </head>
   
 <body>
 
 
 
+<div class="container">
+      <h1>Kontak</h1>
 
-<button id="callJacques">Kontak Jacques</button>
+      <hr class="centered-line">
 
-<!-- Custom confirmation modal -->
-<div id="confirmModal" class="modal" hidden>
-  <div class="modal-content">
-    <p>Are you sure you want to call Jacques?</p>
-    <div class="actions">
-      <button id="confirmYes">Yes</button>
-      <button id="confirmNo">No</button>
+      <div class="buttons">
+        <!-- Use data attributes to store name and number -->
+        <button class="btn btn-jacques" data-name="Jacques" data-tel="+27845976056">
+          Kontak Jacques
+        </button>
+
+        <button class="btn btn-hannelie" data-name="Hannelie" data-tel="+27742850394">
+          Kontak Hannelie
+        </button>
+      </div>
+
+      <hr class="centered-line">
     </div>
-  </div>
-</div>
 
-<style>
-  .modal {
-    position: fixed; inset: 0;
-    display: grid; place-items: center;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  .modal[hidden] { display: none; }
-  .modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    font-family: sans-serif;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-  .actions { margin-top: 15px; display: flex; gap: 10px; justify-content: center; }
-  .actions button { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; }
-  #confirmYes { background: #007BFF; color: white; }
-  #confirmNo { background: #ccc; }
-</style>
+    <!-- Custom confirmation modal -->
+    <div id="confirmModal" class="modal" hidden aria-labelledby="confirmTitle" role="dialog" aria-modal="true">
+      <div class="modal-dialog">
+        <h2 id="confirmTitle" class="modal-title">Confirm Call</h2>
+        <p id="confirmText">Are you sure you want to call?</p>
+        <div class="modal-actions">
+          <button id="confirmNo" class="modal-btn neutral">No</button>
+          <button id="confirmYes" class="modal-btn primary">Yes</button>
+        </div>
+      </div>
+    </div>
 
-<script>
-  const callBtn = document.getElementById('callJacques');
-  const modal = document.getElementById('confirmModal');
-  const yesBtn = document.getElementById('confirmYes');
-  const noBtn = document.getElementById('confirmNo');
+    <script>
+      const modal = document.getElementById('confirmModal');
+      const confirmText = document.getElementById('confirmText');
+      const yesBtn = document.getElementById('confirmYes');
+      const noBtn  = document.getElementById('confirmNo');
 
-  callBtn.addEventListener('click', () => modal.hidden = false);
-  yesBtn.addEventListener('click', () => {
-    modal.hidden = true;
-    window.location.href = 'tel:+27845976056';
-  });
-  noBtn.addEventListener('click', () => modal.hidden = true);
-</script>
+      let pendingTel = null;
 
+      // Open modal for any contact button
+      document.querySelectorAll('button[data-tel]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const name = btn.dataset.name || 'Contact';
+          const tel  = btn.dataset.tel;
+          pendingTel = tel;
+
+          confirmText.textContent = `Are you sure you want to call ${name}?`;
+          openModal();
+        });
+      });
+
+      // Modal behaviors
+      function openModal() {
+        modal.hidden = false;
+        // prevent background scroll on mobile
+        document.body.style.overflow = 'hidden';
+        // move focus to "Yes" for quick confirm
+        yesBtn.focus();
+      }
+
+      function closeModal() {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+      }
+
+      yesBtn.addEventListener('click', () => {
+        const tel = pendingTel;
+        closeModal();
+        if (tel) {
+          // Navigate to tel: to open dialer
+          window.location.href = `tel:${tel}`;
+        }
+      });
+
+      noBtn.addEventListener('click', () => {
+        closeModal();
+        pendingTel = null;
+      });
+
+      // Close modal if user clicks backdrop (outside the dialog)
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+          pendingTel = null;
+        }
+      });
+
+      // Escape key closes modal
+      document.addEventListener('keydown', (e) => {
+        if (!modal.hidden && e.key === 'Escape') {
+          closeModal();
+          pendingTel = null;
+        }
+      });
+    </script>
+	
 
 
     
