@@ -40,8 +40,32 @@
 <body>
 
 
-    <button onclick="window.location.href='tel:+27845976056'">Kontak Jacques</button>
-    <button onclick="window.location.href='tel:+27742850394'">Kontak Hannelie</button>
+    
+<button id="callJacques">Kontak Jacques</button>
+
+<script>
+  document.getElementById('callJacques').addEventListener('click', function () {
+    const ok = confirm('Wil ma vir Jacques bel?');
+    if (ok) {
+      // Proceed to open the phone dialer
+      window.location.href = 'tel:+27845976056';
+    }
+    // If canceled, do nothing
+  });
+
+    
+<button id="callHannelie">Kontak Hannelie</button>
+
+<script>
+  document.getElementById('callJacques').addEventListener('click', function () {
+    const ok = confirm('Wil ma vir Hannelie bel?');
+    if (ok) {
+      // Proceed to open the phone dialer
+      window.location.href = 'tel:+27742850394';
+    }
+    // If canceled, do nothing
+  });
+
     
     <h1>Nuus vir vandag?</h1>
     
