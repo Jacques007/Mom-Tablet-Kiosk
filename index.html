@@ -215,31 +215,17 @@
 
     <div id="time" style="font-size: 4rem; font-weight: bold;color: blue;"></div>
 
-
+	<ul>
     <!-- Take vir vandag -->
-    <p style="font-size: 2rem;font-weight: bold; text-align: center; color: red;">Jacques het probleme by die werk en kan nie by werk nie - Jammer!</p>
+    <li style="font-size: 2rem;font-weight: bold; text-align: center; color: red;">Jacques het probleme by die werk en kan nie by werk nie - Jammer!</li>li
+
+	<!-- Ander Notas vir die dag -->
+    <li style="font-size: 2rem;text-align: center; color: red;">Hulle lewer kos af</li>
     
+	<li style="font-size: 2rem;text-align: center; color: red;">Hannelie kom terug van Weskus</li>
+    </ul>
 
-    <script>
-          function updateTime() {
-          const now = new Date();
-          const timeString = now.getHours().toString().padStart(2, '0') + ':' +
-                   now.getMinutes().toString().padStart(2, '0');
-
-          document.getElementById('time').textContent = timeString;
-          }
-
-          updateTime(); // show immediately
-          setInterval(updateTime,60000); // update every minute
-     </script>
-
-    
-   
-    <!-- Ander Notas vir die dag -->
-
-    <p style="font-size: 2rem;text-align: center; color: red;">Hulle lewer kos af</p>
-    <p style="font-size: 2rem;text-align: center; color: red;">Hannelie kom terug van Weskus</p>
-    
+	
     <br>  <!-- Blank line -->
     
     <!-- Gedagte vir die dag -->
@@ -252,12 +238,14 @@
     <br><!-- Blank line -->
     
     <h1>Nuus vir môre ?</h1>
+	<ul>
     <p id="date2" style="font-size: 2rem; font-weight: bold; text-align: center; color: blue;"></p>
   
-    <p style="font-size: 2rem;font-weight: bold; text-align: center; color: red;">Jacques gaan Struisbaai toe</p>
-    <p style="font-size: 2rem;text-align: center; color: red;">Hulle lewer kos af</p>
+    <li style="font-size: 2rem;font-weight: bold; text-align: center; color: red;">Jacques gaan Struisbaai toe</li>
+    <li style="font-size: 2rem;text-align: center; color: red;">Hulle lewer kos af</li>
 <!--    <p style="font-size: 2rem;text-align: center; color: red;">Hannelie kom terug van Weskus</p>  -->
-
+</ul>
+	
  <!-- lyn -->    
 <hr class="centered-line">
 
@@ -334,6 +322,18 @@
 
 
 
+<script>
+          function updateTime() {
+          const now = new Date();
+          const timeString = now.getHours().toString().padStart(2, '0') + ':' +
+                   now.getMinutes().toString().padStart(2, '0');
+
+          document.getElementById('time').textContent = timeString;
+          }
+
+          updateTime(); // show immediately
+          setInterval(updateTime,60000); // update every minute
+     </script>
 
     <script>
         const days = ["Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"];
