@@ -11,9 +11,11 @@
             background: lightblue;
             text-align: center;
             padding-top: 50px;
+			padding: 20px;
         }
         h1 {
             color: darkblue;
+			text-align: center
         }
 		
 	   .container {
@@ -117,10 +119,12 @@
       border-radius: 20px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.3);
       backdrop-filter: blur(10px);
+	  max-width: 100%; width: clamp(300px, 90vmin, 500px);
     }
 
     .board {
       display: grid;
+	  margin: 0 auto 20px auto;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(3, 1fr);
       width: clamp(250px, 80vmin, 450px);
@@ -143,6 +147,7 @@
       user-select: none;
       position: relative;
       cursor: pointer;
+	  margin: 0; padding: 0;
     }
 
     .cell:hover:not(.x):not(.o) {
