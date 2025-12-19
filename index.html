@@ -111,26 +111,7 @@
 	<!-- Tic Tac Toe -->
 
 
-#gameBoard {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 5px;
-}
-.cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  border: 2px solid #333;
-  cursor: pointer;
-}		
-    #resetButton {
-     margin-top: 15px;
-     padding: 10px 20px;
-     font-size: 1.2rem;
-     cursor: pointer;
-   }
+
 
 
     <!-- Tic Tac Toe  -- end -->
@@ -317,22 +298,7 @@
 	<!-- **                                           T I C  T A C  T O E                                      ** -->
     <!-- ******************************************************************************************************** -->
 
-<div id="gameBoard">
-  <div class="cell" data-index="0"></div>
-  <div class="cell" data-index="1"></div>
-  <div class="cell" data-index="2"></div>
-  <div class="cell" data-index="3"></div>
-  <div class="cell" data-index="4"></div>
-  <div class="cell" data-index="5"></div>
-  <div class="cell" data-index="6"></div>
-  <div class="cell" data-index="7"></div>
-  <div class="cell" data-index="8"></div>
-  <p>Player X: <span id="playerScore">0</span></p>
-  <p>Computer O: <span id="computerScore">0</span></p>
 
-</div>
-	<button id="resetButton">Reset Game</button>
-<div id="statusDisplay"></div>
 
 
 
@@ -471,78 +437,6 @@
         .catch(err => console.error(err));
     </script>
 
-	<script>
-let playerScore = 0;
-let computerScore = 0;
-
-const playerScoreDisplay = document.getElementById("playerScore");
-const computerScoreDisplay = document.getElementById("computerScore");
-
-function checkWinner() {
-  const winPatterns = [
-    [0,1,2],[3,4,5],[6,7,8], // rows
-    [0,3,6],[1,4,7],[2,5,8], // cols
-    [0,4,8],[2,4,6]          // diagonals
-  ];
-  for (let pattern of winPatterns) {
-    const [a,b,c] = pattern;
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      return board[a];
-    }
-  }
-  return board.includes("") ? null : "Draw";
-}
-
-function updateScore(winner) {
-  if (winner === "X") {
-    playerScore++;
-    playerScoreDisplay.innerText = playerScore;
-  } else if (winner === "O") {
-    computerScore++;
-    computerScoreDisplay.innerText = computerScore;
-  }
-}
-
-function computerMove() {
-  let emptyIndices = board.map((val, idx) => val === "" ? idx : null).filter(v => v !== null);
-  let move = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
-  board[move] = "O";
-  cells[move].innerText = "O";
-}
-
-cells.forEach(cell => {
-  cell.addEventListener("click", () => {
-    const index = cell.dataset.index;
-    if (board[index] === "" && !checkWinner()) {
-      board[index] = "X";
-      cell.innerText = "X";
-      let winner = checkWinner();
-      if (winner) {
-        statusDisplay.innerText = winner === "Draw" ? "It's a Draw!" : `${winner} Wins!`;
-        updateScore(winner);
-        return;
-      }
-      computerMove();
-      winner = checkWinner();
-      if (winner) {
-        statusDisplay.innerText = winner === "Draw" ? "It's a Draw!" : `${winner} Wins!`;
-        updateScore(winner);
-      }
-    }
-  });
-});
-
-function resetGame() {
-  for (let i = 0; i < board.length; i++) {
-    board[i] = "";
-  }
-  cells.forEach(cell => cell.innerText = "");
-  statusDisplay.innerText = "Player X's Turn";
-  currentPlayer = "X";
-}
-resetButton.addEventListener("click", resetGame);
-
-</script>
 
 </body>
 
