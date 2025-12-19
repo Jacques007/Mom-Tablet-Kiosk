@@ -110,12 +110,88 @@
 
 	<!-- Tic Tac Toe -->
 
+		#game {
+      text-align: center;
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
 
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: clamp(250px, 80vmin, 450px);
+      height: clamp(250px, 80vmin, 450px);
+      background: #fff;
+      border: 10px solid #333;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+    }
 
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(2.5rem, 12vmin, 5rem);
+      font-weight: bold;
+      border: 4px solid #333;
+      transition: all 0.3s ease;
+      user-select: none;
+      position: relative;
+      cursor: pointer;
+    }
 
+    .cell:hover:not(.x):not(.o) {
+      background: #f0f8ff;
+      transform: scale(1.02);
+    }
+
+    .cell.x {
+      color: #007bff;
+      text-shadow: 1px 1px 2px rgba(0,123,255,0.5);
+    }
+
+    .cell.o {
+      color: #dc3545;
+      text-shadow: 1px 1px 2px rgba(220,53,69,0.5);
+    }
+
+    #status {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      font-weight: bold;
+      margin-bottom: 20px;
+      min-height: 2rem;
+    }
+
+    #restart {
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(40,167,69,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    #restart:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(40,167,69,0.6);
+    }
+
+    #restart:active {
+      transform: translateY(0);
+    }
 
     <!-- Tic Tac Toe  -- end -->
-
 
 
    </style>
@@ -299,7 +375,22 @@
     <!-- ******************************************************************************************************** -->
 
 
-
+<h1>🎮 Tic Tac Toe 🎮</h1>
+  <div id="game">
+    <div id="board" class="board">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+    <div id="status">Your Turn! 👆</div>
+    <button id="restart">New Game 🔄</button>
+  </div>
 
 
 	
@@ -437,7 +528,143 @@
         .catch(err => console.error(err));
     </script>
 
+<script>
+    const board = Array(9).fill(null);
+    const cells = document.querySelectorAll('.cell');
+    const status = document.getElementById('status');
+    const restartBtn = document.getElementById('restart');
+    let gameOver = false;
 
+    const winningCombos = [
+      [0,1,2], [3,4,5], [6,7,8],
+      [0,3,6], [1,4,7], [2,5,8],
+      [0,4,8], [2,4,6]
+    ];
+
+    function checkWinner(b = board) {
+      for (let combo of winningCombos) {
+        const [a, bIdx, c] = combo;
+        if (b[a] && b[a] === b[bIdx] && b[a] === b[c]) {
+          return b[a];
+        }
+      }
+      return null;
+    }
+
+    function boardFull(b = board) {
+      return !b.includes(null);
+    }
+
+    function getEmpty(b = board) {
+      return b.map((cell, i) => cell === null ? i : -1).filter(i => i >= 0);
+    }
+
+    function minimax(b, isMaximizing) {
+      const winner = checkWinner(b);
+      if (winner === 'O') return 10;
+      if (winner === 'X') return -10;
+      if (boardFull(b)) return 0;
+
+      const emptySpots = getEmpty(b);
+      if (isMaximizing) {
+        let maxEval = -Infinity;
+        for (let i of emptySpots) {
+          b[i] = 'O';
+          let evalScore = minimax(b, false);
+          b[i] = null;
+          maxEval = Math.max(maxEval, evalScore);
+        }
+        return maxEval;
+      } else {
+        let minEval = Infinity;
+        for (let i of emptySpots) {
+          b[i] = 'X';
+          let evalScore = minimax(b, true);
+          b[i] = null;
+          minEval = Math.min(minEval, evalScore);
+        }
+        return minEval;
+      }
+    }
+
+    function placeMark(index, mark) {
+      board[index] = mark;
+      const cell = cells[index];
+      cell.textContent = mark;
+      cell.classList.add(mark.toLowerCase());
+    }
+
+    function playerMove(index) {
+      if (gameOver || board[index]) return;
+      placeMark(index, 'X');
+      updateStatus();
+      if (!gameOver) {
+        setTimeout(aiMove, 500);
+      }
+    }
+
+    function aiMove() {
+      let bestScore = -Infinity;
+      let bestMove = -1;
+      const emptySpots = getEmpty();
+
+      for (let i of emptySpots) {
+        board[i] = 'O';
+        let score = minimax(board, false);
+        board[i] = null;
+        if (score > bestScore) {
+          bestScore = score;
+          bestMove = i;
+        }
+      }
+
+      if (bestMove !== -1) {
+        placeMark(bestMove, 'O');
+        updateStatus();
+      }
+    }
+
+    function updateStatus() {
+      const winner = checkWinner();
+      if (winner) {
+        status.textContent = `${winner} Wins! 🎉`;
+        gameOver = true;
+        return;
+      }
+      if (boardFull()) {
+        status.textContent = "It's a Draw! 🤝";
+        gameOver = true;
+        return;
+      }
+      gameOver = false;
+      const xCount = board.filter(c => c === 'X').length;
+      const oCount = board.filter(c => c === 'O').length;
+      if (xCount === oCount) {
+        status.textContent = "Your Turn! 👆";
+      } else {
+        status.textContent = "AI's Turn... 🤖";
+      }
+    }
+
+    function restart() {
+      board.fill(null);
+      cells.forEach((cell) => {
+        cell.textContent = '';
+        cell.classList.remove('x', 'o');
+      });
+      gameOver = false;
+      updateStatus();
+    }
+
+    // Event listeners
+    cells.forEach((cell, index) => {
+      cell.addEventListener('click', () => playerMove(index));
+    });
+    restartBtn.addEventListener('click', restart);
+
+    // Initial status
+    updateStatus();
+  </script>
 </body>
 
 </html>
