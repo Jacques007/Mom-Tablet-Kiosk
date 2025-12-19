@@ -107,6 +107,15 @@
 		color: green;
 	  }
 
+
+    .game-container { text-align: center; font-family: sans-serif; margin: 20px auto; max-width: 300px; }
+    #status { margin-bottom: 10px; font-weight: bold; color: #333; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; background-color: #333; border: 5px solid #333; }
+    .cell { width: 100px; height: 100px; background-color: #fff; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; cursor: pointer; }
+    .cell:hover { background-color: #f0f0f0; }
+    #reset-btn { margin-top: 15px; padding: 8px 16px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+
+		
    </style>
   
 </head>
@@ -250,6 +259,9 @@
     <br><!-- Blank line -->
     <br><!-- Blank line -->
 
+
+
+	
     <!-- ******************************************************************************************************** -->
 	<!-- **                                           M ô R E                                                  ** -->
     <!-- ******************************************************************************************************** -->
@@ -278,6 +290,33 @@
 
     <br>  <!-- Blank line -->
 
+    <hr class="centered-line">
+	
+	<!-- ******************************************************************************************************** -->
+	<!-- **                                           T I C  T A C  T O E                                      ** -->
+    <!-- ******************************************************************************************************** -->
+
+<div class="game-container">
+    <h3>Tic Tac Toe</h3>
+    <div id="status">Player X's Turn</div>
+    <div class="grid" id="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+    <button onclick="resetGame()" id="reset-btn">Restart Game</button>
+</div>
+
+
+
+	
+	
     <hr class="centered-line">
 
 <br>  <!-- Blank line -->
@@ -410,6 +449,53 @@
         })
         .catch(err => console.error(err));
     </script>
+
+	<script>
+    let currentPlayer = 'X';
+    let gameState = ["", "", "", "", "", "", "", "", ""];
+    const statusDisplay = document.getElementById('status');
+    const cells = document.querySelectorAll('.cell');
+
+    const winningConditions = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6]             // Diagonals
+    ];
+
+    cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+
+    function handleCellClick(e) {
+        const clickedCell = e.target;
+        const index = clickedCell.getAttribute('data-index');
+
+        if (gameState[index] !== "" || checkWinner()) return;
+
+        gameState[index] = currentPlayer;
+        clickedCell.innerText = currentPlayer;
+
+        if (checkWinner()) {
+            statusDisplay.innerText = `Player ${currentPlayer} Wins!`;
+        } else if (!gameState.includes("")) {
+            statusDisplay.innerText = "It's a Draw!";
+        } else {
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            statusDisplay.innerText = `Player ${currentPlayer}'s Turn`;
+        }
+    }
+
+    function checkWinner() {
+        return winningConditions.some(condition => {
+            return condition.every(index => gameState[index] === currentPlayer);
+        });
+    }
+
+    function resetGame() {
+        currentPlayer = 'X';
+        gameState = ["", "", "", "", "", "", "", "", ""];
+        statusDisplay.innerText = "Player X's Turn";
+        cells.forEach(cell => cell.innerText = "");
+    }
+</script>
 
 </body>
 
