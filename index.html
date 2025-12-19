@@ -108,6 +108,8 @@
 	  }
 
 
+	<!-- Tic Tac Toe -->
+
     .game-container { text-align: center; font-family: sans-serif; margin: 20px auto; max-width: 300px; }
     #status { margin-bottom: 10px; font-weight: bold; color: #333; }
     .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; background-color: #333; border: 5px solid #333; }
@@ -115,7 +117,10 @@
     .cell:hover { background-color: #f0f0f0; }
     #reset-btn { margin-top: 15px; padding: 8px 16px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
 
-		
+    <!-- Tic Tac Toe  -- end -->
+
+
+
    </style>
   
 </head>
@@ -298,7 +303,7 @@
 
 <div class="game-container">
     <h3>Tic Tac Toe</h3>
-    <div id="status">Player X's Turn</div>
+    <div id="status" style="font-size: 2rem;">Player X's Turn</div>
     <div class="grid" id="board">
         <div class="cell" data-index="0"></div>
         <div class="cell" data-index="1"></div>
