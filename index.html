@@ -538,8 +538,9 @@
         .catch(err => console.error(err));
     </script>
 
-<script>
-    const board = Array(9).fill(null);
+	<!-- Tic Tac Toe -->
+	<script>
+   const board = Array(9).fill(null);
     const cells = document.querySelectorAll('.cell');
     const status = document.getElementById('status');
     const restartBtn = document.getElementById('restart');
@@ -569,31 +570,46 @@
       return b.map((cell, i) => cell === null ? i : -1).filter(i => i >= 0);
     }
 
-    function minimax(b, isMaximizing) {
-      const winner = checkWinner(b);
-      if (winner === 'O') return 10;
-      if (winner === 'X') return -10;
-      if (boardFull(b)) return 0;
+    // SUPER EASY AI for Mom – wins/draws ~30% of games, you win ~70%!
+    function aiMove() {
+      const emptySpots = getEmpty();
 
-      const emptySpots = getEmpty(b);
-      if (isMaximizing) {
-        let maxEval = -Infinity;
-        for (let i of emptySpots) {
-          b[i] = 'O';
-          let evalScore = minimax(b, false);
-          b[i] = null;
-          maxEval = Math.max(maxEval, evalScore);
+      // 1. Check if AI can win (20% chance to "miss" even this)
+      if (Math.random() < 0.8) {
+        for (let i = 0; i < 9; i++) {
+          if (board[i] === null) {
+            board[i] = 'O';
+            if (checkWinner()) {
+              placeMark(i, 'O');
+              updateStatus();
+              return;
+            }
+            board[i] = null;
+          }
         }
-        return maxEval;
-      } else {
-        let minEval = Infinity;
-        for (let i of emptySpots) {
-          b[i] = 'X';
-          let evalScore = minimax(b, true);
-          b[i] = null;
-          minEval = Math.min(minEval, evalScore);
+      }
+
+      // 2. Check if player is about to win (50% chance to block)
+      if (Math.random() < 0.5) {
+        for (let i = 0; i < 9; i++) {
+          if (board[i] === null) {
+            board[i] = 'X';
+            if (checkWinner()) {
+              board[i] = null;
+              placeMark(i, 'O');
+              updateStatus();
+              return;
+            }
+            board[i] = null;
+          }
         }
-        return minEval;
+      }
+
+      // 3. Otherwise... PURE RANDOM (60% of all moves are random now!)
+      if (emptySpots.length > 0) {
+        const randomMove = emptySpots[Math.floor(Math.random() * emptySpots.length)];
+        placeMark(randomMove, 'O');
+        updateStatus();
       }
     }
 
@@ -609,35 +625,21 @@
       placeMark(index, 'X');
       updateStatus();
       if (!gameOver) {
-        setTimeout(aiMove, 500);
-      }
-    }
-
-    function aiMove() {
-      let bestScore = -Infinity;
-      let bestMove = -1;
-      const emptySpots = getEmpty();
-
-      for (let i of emptySpots) {
-        board[i] = 'O';
-        let score = minimax(board, false);
-        board[i] = null;
-        if (score > bestScore) {
-          bestScore = score;
-          bestMove = i;
-        }
-      }
-
-      if (bestMove !== -1) {
-        placeMark(bestMove, 'O');
-        updateStatus();
+        setTimeout(aiMove, 800); // Slower AI for easier wins
       }
     }
 
     function updateStatus() {
       const winner = checkWinner();
       if (winner) {
-        status.textContent = `${winner} Wins! 🎉`;
+        if (winner === 'X') {
+          status.textContent = "You Win! 🎉🏆👏";
+          // Flash win message
+          status.style.color = '#28a745';
+          setTimeout(() => status.style.color = '', 2000);
+        } else {
+          status.textContent = "AI Wins! 😎";
+        }
         gameOver = true;
         return;
       }
@@ -648,11 +650,10 @@
       }
       gameOver = false;
       const xCount = board.filter(c => c === 'X').length;
-      const oCount = board.filter(c => c === 'O').length;
-      if (xCount === oCount) {
-        status.textContent = "Your Turn! 👆";
+      if (xCount > board.filter(c => c === 'O').length) {
+        status.textContent = "AI's Turn... 🤖 (take your time!)";
       } else {
-        status.textContent = "AI's Turn... 🤖";
+        status.textContent = "Your Turn! 👆";
       }
     }
 
@@ -662,19 +663,20 @@
         cell.textContent = '';
         cell.classList.remove('x', 'o');
       });
+      status.style.color = '';
       gameOver = false;
       updateStatus();
     }
 
-    // Event listeners
     cells.forEach((cell, index) => {
       cell.addEventListener('click', () => playerMove(index));
     });
+
     restartBtn.addEventListener('click', restart);
 
-    // Initial status
     updateStatus();
-  </script>
+		
+	</script>
 </body>
 
 </html>
