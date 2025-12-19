@@ -236,8 +236,10 @@
     <!-- Gedagte vir die dag -->
     <img src="MomMainTabletImage.jpeg" alt="My picture" style="width:400px; display:block; margin:auto;">
 
-    <!-- Ander Notas vir die dag -->
-    <p style="font-size: 2rem;">Vandag se weer is sonskyn 27°C</p>
+    <!-- Vandag se weer -->
+    <!-- <p style="font-size: 2rem;">Vandag se weer is sonskyn 27°C</p> -->
+	<div id="highC" style="font-size: 2rem;">Loading…</div>
+
 
     <br><!-- Blank line -->
     <br><!-- Blank line -->
@@ -386,6 +388,22 @@
     </script>
 
 	<script src="tasks.js"></script>
+
+	    <script>
+      // Replace with your coordinates
+      const lat = -33.81754, lon = 18.71517;
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max&timezone=auto`;
+
+      fetch(url)
+        .then(r => r.json())
+        .then(data => {
+          // Take the first day's max temp in °C
+          const maxC = data.daily.temperature_2m_max[0];
+          const date = data.daily.time[0];
+          document.getElementById('highC').textContent = `Vandag se hoogste temperatuur is : ${maxC.toFixed(1)} °C (${date})`;
+        })
+        .catch(err => console.error(err));
+    </script>
 
 </body>
 
