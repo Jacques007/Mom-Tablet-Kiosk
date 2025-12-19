@@ -638,22 +638,22 @@
           status.style.color = '#28a745';
           setTimeout(() => status.style.color = '', 2000);
         } else {
-          status.textContent = "AI Wins! 😎";
+          status.textContent = "Computer Wen! 😎";
         }
         gameOver = true;
         return;
       }
       if (boardFull()) {
-        status.textContent = "It's a Draw! 🤝";
+        status.textContent = "Dis is Gelykop! 🤝";
         gameOver = true;
         return;
       }
       gameOver = false;
       const xCount = board.filter(c => c === 'X').length;
       if (xCount > board.filter(c => c === 'O').length) {
-        status.textContent = "AI's Turn... 🤖 (take your time!)";
+        status.textContent = "Computer se beurt... 🤖";
       } else {
-        status.textContent = "Your Turn! 👆";
+        status.textContent = "Jou Beurt! 👆";
       }
     }
 
