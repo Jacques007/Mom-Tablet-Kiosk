@@ -325,9 +325,8 @@
         .then(response => response.json())
         .then(data => {
             const commitHash = data.sha.substring(0, 7);
-            const commitDate = new Date(data.commit.author.date).toLocaleDateString();
-            document.getElementById('version').innerHTML = 
-                `Build: ${commitHash} | ${commitDate}`;
+                document.getElementById('version').innerHTML = 
+                `Build: ${commitHash};
         });
     </script>
 	
