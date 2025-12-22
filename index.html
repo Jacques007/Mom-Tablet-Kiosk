@@ -9,91 +9,10 @@
 	<link rel="stylesheet" href="styles\body.css"> <!-- Body -->
 	<link rel="stylesheet" href="styles\Photos_style.css"> <!-- Photos -->
 	<link rel="stylesheet" href="styles\tic_tac_toe.css"> <!-- Tic Tac Toe -->
+	<link rel="stylesheet" href="styles\contacts.css"> <!-- Tic Tac Toe -->
 
     <style>
         
-		
-	   .container {
-        width: min(92vw, 520px);
-        background: var(--bg);
-        border-radius: 16px;
-        padding: 24px;
-        box-shadow: 0 10px 30px rgba(0,0,0,.08);
-        text-align: center;
-      }
-
-		
-      .buttons {
-        display: grid;
-        gap: 12px;
-        margin-top: 8px;
-      }
-
-      .btn {
-        font-size: 30px;
-        padding: 10px 13px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        color: #fff;
-        transition: transform .06s ease, filter .2s ease;
-      }
-      .btn:active { transform: scale(0.98); }
-
-      .btn-jacques { background: var(--primary); }
-      .btn-hannelie { background: var(--danger); }
-      .btn-jacques:hover { filter: brightness(1.05); }
-      .btn-hannelie:hover { filter: brightness(1.05); }
-
-   /* Modal styles */
-      .modal {
-        position: fixed; inset: 0;
-        display: grid; place-items: center;
-        background: rgba(0,0,0,0.35);
-        z-index: 1000;
-      }
-      .modal[hidden] { display: none; }
-
-      .modal-dialog {
-        width: min(92vw, 420px);
-        background: #fff;
-        border-radius: 14px;
-        padding: 18px;
-        box-shadow: 0 12px 36px rgba(0,0,0,.25);
-      }
-
-      .modal-title {
-        font-size: 1.1rem;
-        margin: 0 0 10px 0;
-      }
-
-      .modal-actions {
-        display: flex;
-        gap: 10px;
-        justify-content: flex-end;
-        margin-top: 10px;
-      }
-
-      .modal-btn {
-        padding: 10px 16px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 1rem;
-      }
-      .modal-btn.primary { background: var(--primary); color: #000; }
-      .modal-btn.neutral { background: #eceff1; color: #333; }
-
-      /* Accessibility helpers */
-      .visually-hidden {
-        position: absolute !important;
-        height: 1px; width: 1px;
-        overflow: hidden;
-        clip: rect(1px, 1px, 1px, 1px);
-        white-space: nowrap;
-      }
-
-
 		.todayList li {
 		font-size: 2.5rem;
 		color: red;
