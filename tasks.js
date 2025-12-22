@@ -1,4 +1,4 @@
-fetch('tasks.json')
+fetch('json/tasks.json')
   .then(r => r.json())
   .then(tasks => {
     const today = new Date();
@@ -21,3 +21,4 @@ fetch('tasks.json')
       if (t.date === tomorrowStr) tomorrowList.appendChild(li);
     });
   });
+
