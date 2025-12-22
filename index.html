@@ -7,7 +7,7 @@
     <title>Ouma Hannetjie se Tablet</title>
 
 	<link rel="stylesheet" href="styles\body.css"> <!-- Body -->
-	<link rel="stylesheet" href="styles\Photos_style.css"> <!-- Photos -->
+	<link rel="stylesheet" href="styles\photos_style.css"> <!-- Photos -->
 	<link rel="stylesheet" href="styles\tic_tac_toe.css"> <!-- Tic Tac Toe -->
 	<link rel="stylesheet" href="styles\contacts.css"> <!-- Kontak Jacques & Hannelie -->
 	<link rel="stylesheet" href="styles\tasks.css"> <!-- Kontak Jacques & Hannelie -->
@@ -319,6 +319,18 @@
             });
     </script>
 
+    <div id="version">Loading version...</div>
+	<script>
+    fetch('https://api.github.com/repos/Jacques007/Mom-Tablet-Kiosk/commits/main')
+        .then(response => response.json())
+        .then(data => {
+            const commitHash = data.sha.substring(0, 7);
+            const commitDate = new Date(data.commit.author.date).toLocaleDateString();
+            document.getElementById('version').innerHTML = 
+                `Build: ${commitHash} | ${commitDate}`;
+        });
+    </script>
+	
 	<script src="tasks.js"></script>
 
 	    <script>
