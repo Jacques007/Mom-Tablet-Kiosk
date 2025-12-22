@@ -1,4 +1,4 @@
-fetch('photo_descriptions.json')  // Path to your JSON file
+fetch('json/photo_descriptions.json')  // Path to your JSON file
   .then(response => {
     if (!response.ok) {
       throw new Error('Failed to load data');
@@ -33,4 +33,5 @@ fetch('photo_descriptions.json')  // Path to your JSON file
   .catch(error => {
     console.error('Error loading gallery:', error);
     document.getElementById('gallery').innerHTML = '<p>Sorry, could not load the gallery.</p>';
+
   });
