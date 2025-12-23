@@ -172,7 +172,7 @@
        <!-- Images and headings will be inserted here by JavaScript -->
     </div>
 
-    <script src="scripts/photo_script.js"></script> <!-- Your JavaScript file -->
+    <script src="scripts/photo_script.js"></script> <!-- Photos with description -->
 	
 	
     <br>  <!-- Blank line -->
@@ -225,21 +225,7 @@
 <bodyStories>
   <h1>Hier is iets om te lees:</h1>
   <div id="content" class="text-block">Loading…</div>
-
-  <script>
-    fetch('Stories.txt')
-      .then(r => {
-        if (!r.ok) throw new Error('Failed to load content.txt');
-        return r.text();
-      })
-      .then(text => {
-        document.getElementById('content').textContent = text;
-      })
-      .catch(err => {
-        document.getElementById('content').textContent = 'Could not load content.';
-        console.error(err);
-      });
-  </script>
+  <script src="scripts/stories.js"></script> <!-- Stories -->  
 </bodyStories>   
 
 
@@ -261,7 +247,7 @@
 
 
 
-<script>
+     <script>
           function updateTime() {
           const now = new Date();
           const timeString = now.getHours().toString().padStart(2, '0') + ':' +
@@ -326,7 +312,7 @@
         .then(data => {
             const commitHash = data.sha.substring(0, 7);
                 document.getElementById('version').innerHTML = 
-                `Build: ${commitHash};
+                `Build: ${commitHash} | ${commitDate}`;
         });
     </script>
 	
