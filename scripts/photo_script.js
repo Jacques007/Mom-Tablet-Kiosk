@@ -19,7 +19,7 @@ fetch('json/photo_descriptions.json')  // Path to your JSON file
       img.alt = item.heading;  // Good for accessibility
 
       // Create heading
-      const heading = document.createElement('h2');
+      const heading = document.createElement('h3');
       heading.textContent = item.heading;
 
       // Append to item container (heading above or below image?)
