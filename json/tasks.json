@@ -26,8 +26,20 @@
   {"date": "2025-12-24", "task": "Hannelie tel my kwart oor 10 op vir hare by Nadia half 11"},
   { "date": "2025-12-24", "task": "Jacques is in Struisbaai" },
   { "date": "2025-12-24", "task": "Ina is in Engeland" },
-  
-  { "date": "2025-12-25", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-25", "task": "Ina is in Engeland" }
+
+  {"date": "2025-12-25", "task": "Vandag is *** K E R S F E E S ***"},
+  {"date": "2025-12-25", "task": "Hannelie tel my kwart voor 9 op vir kerk vanoggend"},
+  { "date": "2025-12-25", "task": "Jacques tel my 11 uur op vir Kersfees middag ete by hom" },
+  { "date": "2025-12-25", "task": "Ina is in Engeland" },
+  { "date": "2025-12-25", "task": "Jacques ry 3 uur weer na Struisbaai" },
+
+  { "date": "2025-12-26", "task": "Jacques is in Struisbaai" },
+  { "date": "2025-12-26", "task": "Ina is in Engeland" },
+
+  { "date": "2025-12-27", "task": "Jacques is in Struisbaai" },
+  { "date": "2025-12-27", "task": "Ina is in Engeland" },
+
+  { "date": "2025-12-28", "task": "Jacques is in Struisbaai" },
+  { "date": "2025-12-28", "task": "Ina is in Engeland" }
 ]
 
