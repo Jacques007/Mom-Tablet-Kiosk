@@ -9,7 +9,7 @@ const todayStr = today.toISOString().split('T')[0];
 const yesterdayStr = yesterday.toISOString().split('T')[0];
 
 // Load click sound
-const clickSound = new Audio('media\click.mp3');
+const clickSound = new Audio('media/click.mp3');
 clickSound.volume = 0.3; // adjust as needed
 
 fetch('json/video.json')
