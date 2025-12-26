@@ -12,7 +12,7 @@ const yesterdayStr = yesterday.toISOString().split('T')[0];
 const clickSound = new Audio('click.mp3');
 clickSound.volume = 0.3; // adjust as needed
 
-fetch('scripts/video.json')
+fetch('json/video.json')
   .then(res => {
     if (!res.ok) throw new Error('Network error');
     return res.json();
