@@ -312,7 +312,7 @@
             const match = linkHeader ? linkHeader.match(/page=(\d+)>; rel="last"/) : null;
             const commitCount = match ? match[1] : 'unknown';
             
-            return fetch('https://api.github.com/repos/Jacques007/Mom-Tabley-Kiosk/commits/main')
+            return fetch('https://api.github.com/repos/Jacques007/Mom-Tablet-Kiosk/commits/main')
                 .then(r => r.json())
                 .then(data => ({data, commitCount}));
         })
