@@ -67,7 +67,7 @@ function createButton(video, index=0, isNewest=false, isToday=false) {
     <strong>${video.title}</strong>
     ${isToday ? '<span class="today-label">*</span>' : ''}
     <br>
-    <span style="font-size:1.2rem; color:#555;">${video.description}</span>
+    <span style="font-size:2rem; color:#555;">${video.description}</span>
   `;
 
   btn.onclick = () => {
