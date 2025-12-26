@@ -1,0 +1,22 @@
+{
+  "videos": [
+    {
+      "date": "2025-12-26",
+      "title": "Good Morning 🌞",
+      "description": "A message just for today",
+      "videoId": "20wgoBQhYh8"
+    },
+    {
+      "date": "2025-01-11",
+      "title": "Family Hello ❤️",
+      "description": "Thinking of you",
+      "videoId": "VIDEO_ID_2"
+    },
+    {
+      "date": "2025-01-11",
+      "title": "Evening Message 🌙",
+      "description": "Relax and enjoy",
+      "videoId": "VIDEO_ID_3"
+    }
+  ]
+}
