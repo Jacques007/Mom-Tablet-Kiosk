@@ -1,4 +1,4 @@
-  fetch('Stories.txt')
+  fetch('media/Stories.txt')
       .then(r => {
         if (!r.ok) throw new Error('Failed to load content.txt');
         return r.text();
