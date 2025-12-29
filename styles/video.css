@@ -9,20 +9,26 @@ h1 {
   font-size: 2.5rem;
 }
 
+
 .video-button {
-  width: 100%;
- <!-- font-size: 2rem; -->
+  display: block;             /* ensures width is honored */
+  inline-size: 100%;          /* logical equivalent of width:100% */
+  box-sizing: border-box;     /* keeps padding within the width */
+
+  /* Your styles */
+  /* font-size: 2rem; */       /* use CSS comments, not HTML comments */
   padding: 20px;
   margin-bottom: 15px;
   text-align: left;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.2s ease;
   border: none;
   border-radius: 10px;
   background-color: #f5f5f5;
   cursor: pointer;
 }
+
 
 .video-button.show {
   opacity: 1;
