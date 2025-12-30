@@ -1,7 +1,7 @@
 
 (async function(){
   // ------- JSON path -------
-  const JSON_URL = "jigsaw.json";  // images & daily schedule
+  const JSON_URL = "json/jigsaw.json";  // images & daily schedule
 
   // ------- DOM -------
   const boardEl = document.getElementById("board");
