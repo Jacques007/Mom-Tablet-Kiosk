@@ -1,0 +1,16 @@
+
+{
+  "timeZone": "Africa/Johannesburg",
+  "defaultRows": 3,
+  "defaultCols": 4,
+  "strategy": "explicit-or-rotate",
+  "puzzles": [
+    {
+      "date": "2025-12-29",
+      "image": "images/2025-12-30-Horse.jpg",
+      "rows": 3,
+      "cols": 4,
+      "title": "Horse Puzzle"
+    }
+  ]
+}
