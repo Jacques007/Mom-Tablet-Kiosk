@@ -45,7 +45,19 @@
 
   { "date": "2025-12-29", "task": "Hannelie het my 11 uur kom haal vandag" },
   { "date": "2025-12-29", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-29", "task": "Ina is op die boot" }
+  { "date": "2025-12-29", "task": "Ina is op die boot" },
+
+  { "date": "2025-12-30", "task": "Hannelie tel my 12 uur op om my Wimpy toe te neem vir milkshake" },
+  { "date": "2025-12-30", "task": "Jacques is in Struisbaai" },
+  { "date": "2025-12-30", "task": "Ina is op die boot" },
+
+  { "date": "2025-12-31", "task": "Vandag is die laaste dag van 2025!" },
+  { "date": "2025-12-31", "task": "Jacques is in Struisbaai" },
+  { "date": "2025-12-31", "task": "Ina is op die boot" },
+
+  { "date": "2026-01-01", "task": "Vandag is die Eerste dag van die Nuwe jaar 2026!" },
+  { "date": "2026-01-01", "task": "Jacques is in Struisbaai" },
+  { "date": "2026-01-01", "task": "Ina is op die boot" }
 
 ]
 
