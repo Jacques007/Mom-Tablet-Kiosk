@@ -1,5 +1,17 @@
 {
   "videos": [
+     {
+      "date": "2025-12-31",
+      "title": "Bobby Helms",
+      "description": "Jingle Bells",
+      "videoId": "Z0ajuTaHBtM"
+    },
+    {
+      "date": "2025-12-31",
+      "title": "Bing Cosby",
+      "description": "It is looking like Christmas",
+      "videoId": "C8JS51FTW6w"
+    },
     {
       "date": "2025-12-31",
       "title": "Theuns Jordaan",
@@ -24,7 +36,7 @@
       "description": "Rolbos van verlange",
       "videoId": "gHxF9xz2wgU"
     },
-{
+    {
       "date": "2025-12-31",
       "title": "Rina Hugo",
       "description": "Hoor jy my stem",
@@ -36,7 +48,7 @@
       "description": "Bring Jou Hart",
       "videoId": "nZ492w9MnBI"
     },
-{
+    {
       "date": "2025-12-31",
       "title": "Juanita du Plessis",
       "description": "Tussen Woorde",
@@ -50,16 +62,15 @@
     },
     {
       "date": "2025-12-31",
-      "title": "Bobby Helms",
-      "description": "Jingle Bells",
-      "videoId": "Z0ajuTaHBtM"
+      "title": "Andriette",
+      "description": "Sewe Oseane",
+      "videoId": "vWvQisgIUJc"
     },
     {
       "date": "2025-12-31",
-      "title": "Bing Cosby",
-      "description": "It is looking like Christmas",
-      "videoId": "C8JS51FTW6w"
+      "title": "Andre Rieu",
+      "description": "Oujaar 2025",
+      "videoId": "11wYCgYms2I"
     }
-
   ]
 }
