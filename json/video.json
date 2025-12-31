@@ -1,35 +1,47 @@
 {
   "videos": [
     {
-      "date": "2025-12-29",
-      "title": "Jim Reeves",
-      "description": "Christmas Polka",
-      "videoId": "20wgoBQhYh8"
+      "date": "2025-12-31",
+      "title": "Theuns Jordaan",
+      "description": "Country Medley",
+      "videoId": "edvMz6feBys&list"
     },
     {
-      "date": "2025-12-29",
+      "date": "2025-12-31",
       "title": "Manie Jackson",
       "description": "Die Hemel Weet",
       "videoId": "Axu8yTgs7JY"
     },
     {
-      "date": "2025-12-29",
+      "date": "2025-12-31",
       "title": "Ge Korsten",
       "description": "Sing Seeman Sing",
       "videoId": "Gu_WbBeZ-Bs&list"
     },
     {
-      "date": "2025-12-29",
+      "date": "2025-12-31",
       "title": "Janita Claassen",
       "description": "Rolbos van verlange",
       "videoId": "gHxF9xz2wgU"
     },
 {
-      "date": "2025-12-29",
+      "date": "2025-12-31",
       "title": "Rina Hugo",
       "description": "Hoor jy my stem",
       "videoId": "xfmla9YPnyw&list"
+    },
+    {
+      "date": "2025-12-31",
+      "title": "Theuns Jordaan & Juanita",
+      "description": "Country Medley",
+      "videoId": "nZ492w9MnBI&list"
+    },
+{
+      "date": "2025-12-31",
+      "title": "Juanita du Plessis,
+      "description": "Tussen Woorde",
+      "videoId": "QU5aGINiHJc"
     }
-
+    
   ]
 }
