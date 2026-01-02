@@ -12,6 +12,7 @@ const yesterdayStr = yesterday.toISOString().split('T')[0];
 const clickSound = new Audio('media/click.mp3');
 clickSound.volume = 0.3; // adjust as needed
 
+
 fetch('json/video.json')
   .then(res => {
     if (!res.ok) throw new Error('Network error');
@@ -38,11 +39,21 @@ fetch('json/video.json')
 
     const newestVideoIndex = visibleVideos.length - 1;
 
-    visibleVideos.forEach((video, i) => {
-      const isNewest = i === newestVideoIndex;
-      const isToday = video.date === todayStr;
-      createButton(video, i, isNewest, isToday);
-    });
+ // If only one video → autoplay, no button
+if (visibleVideos.length === 1) {
+  autoPlaySingleVideo(visibleVideos[0]);
+  return;
+}
+
+// Otherwise show buttons
+const newestVideoIndex = visibleVideos.length - 1;
+
+visibleVideos.forEach((video, i) => {
+  const isNewest = i === newestVideoIndex;
+  const isToday = video.date === todayStr;
+  createButton(video, i, isNewest, isToday);
+});
+
   })
   .catch(() => {
     const cachedVideo = localStorage.getItem(STORAGE_KEY);
@@ -52,6 +63,11 @@ fetch('json/video.json')
       showOfflineMessage();
     }
   });
+
+
+function autoPlaySingleVideo(video) {
+  playVideo(video.videoId, video);
+}
 
 function createButton(video, index=0, isNewest=false, isToday=false) {
   const btn = document.createElement('button');
