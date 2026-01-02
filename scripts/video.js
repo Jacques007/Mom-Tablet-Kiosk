@@ -37,7 +37,6 @@ fetch('json/video.json')
       return;
     }
 
-    const newestVideoIndex = visibleVideos.length - 1;
 
  // If only one video → autoplay, no button
 if (visibleVideos.length === 1) {
