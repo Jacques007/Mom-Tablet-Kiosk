@@ -23,12 +23,12 @@ fetch('json/video.json')
 
     if (visibleVideos.length === 0) {
       visibleVideos = videos.filter(v => v.date < todayStr).slice(-3);
-      if (visibleVideos.length > 0) {
-        const note = document.createElement('p');
-        note.className = 'note';
-        note.innerText = 'Here are your recent messages';
-        container.appendChild(note);
-      }
+     // if (visibleVideos.length > 0) {
+     //   const note = document.createElement('p');
+     //   note.className = 'note';
+     //   note.innerText = 'Here are your recent messages';
+     //   container.appendChild(note);
+     // }
     }
 
     if (visibleVideos.length === 0) {
