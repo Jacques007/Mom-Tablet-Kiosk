@@ -9,7 +9,7 @@
         const ccyy = dtoday.getFullYear();
 
 
-        document.getElementById("date").innerText = "Vandag is "  + dayName + " " + dd + " " + mmm + " " + ccyy;
+        document.getElementById("date").innerText = "Vandag is "  + dayName + " " + dd + " " + mmm;
 
         const tomorrow = new Date(dtoday);
         tomorrow.setDate(dtoday.getDate() + 1); // Add 1 day
@@ -18,4 +18,4 @@
         const tmmm = months[tomorrow.getMonth()];
         const tccyy = tomorrow.getFullYear();
         
-        document.getElementById("date2").innerText = "Môre is "  + tdayName + " " + tdd + " " + tmmm + " " + tccyy;
+        document.getElementById("date2").innerText = "Môre is "  + tdayName + " " + tdd + " " + tmmm;
