@@ -8,6 +8,6 @@
           // Take the first day's max temp in °C
           const maxC = data.daily.temperature_2m_max[0];
           const date = data.daily.time[0];
-          document.getElementById('highC').textContent = `Vandag is : ${maxC.toFixed(0)} °C`;
+          document.getElementById('highC').textContent = `Vandag se temperatuur : ${maxC.toFixed(0)} °C`;
         })
         .catch(err => console.error(err));
