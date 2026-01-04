@@ -1,66 +1,15 @@
 [
   { "date": "2025-12-17", "task": "Hannelie neem my na die oefeninge by die saal" },
-  { "date": "2025-12-17", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-17", "task": "Ina is in Engeland" },
-  
-  { "date": "2025-12-18", "task": "Hannelie kom my haal" },
-  { "date": "2025-12-18", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-18", "task": "Ina is in Engeland" },
-  
-  { "date": "2025-12-19", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-19", "task": "Ina is in Engeland" },
-  
-  { "date": "2025-12-20", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-20", "task": "Ina is in Engeland" },
-  
-  { "date": "2025-12-21", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-21", "task": "Ina is in Engeland" },
-  
-  { "date": "2025-12-22", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-22", "task": "Ina is in Engeland" },
-  
-  {"date": "2025-12-23", "task": "Hulle lewer kos af"} ,
-  { "date": "2025-12-23", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-23", "task": "Ina is in Engeland" },
-  
-  {"date": "2025-12-24", "task": "Hannelie tel my kwart oor 10 op vir hare by Nadia half 11"},
+  { "date": "2025-12-24", "task": "Hannelie tel my kwart oor 10 op vir hare by Nadia half 11"},
   { "date": "2025-12-24", "task": "Jacques is in Struisbaai" },
   { "date": "2025-12-24", "task": "Ina is in Engeland" },
-
-  {"date": "2025-12-25", "task": "Vandag is *** K E R S F E E S ***"},
-  {"date": "2025-12-25", "task": "Hannelie tel my kwart voor 9 op vir kerk vanoggend"},
-  { "date": "2025-12-25", "task": "Jacques tel my 11 uur op vir Kersfees middag ete by hom" },
-  { "date": "2025-12-25", "task": "Ina is in Engeland" },
-  { "date": "2025-12-25", "task": "Jacques ry 3 uur weer na Struisbaai" },
-
-  { "date": "2025-12-26", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-26", "task": "Ina is in Engeland" },
-
-  { "date": "2025-12-27", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-27", "task": "Ina is op die boot" },
-
   { "date": "2025-12-28", "task": "Hannelie tel my 12 uur op om by haar te gaan eet" },
-  { "date": "2025-12-28", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-28", "task": "Ina is op die boot" },
 
-  { "date": "2025-12-29", "task": "Hannelie het my 11 uur kom haal vandag" },
-  { "date": "2025-12-29", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-29", "task": "Ina is op die boot" },
+  { "date": "2026-01-04", "task": "Hannelie tel my 12 uur op om by haar te gaan eet" },
+  { "date": "2026-01-04", "task": "Jacques is in Struisbaai"},
+  { "date": "2026-01-04", "task": "Ina is op die boot" },
 
-  { "date": "2025-12-30", "task": "Hannelie tel my 12 uur op om my Wimpy toe te neem vir milkshake" },
-  { "date": "2025-12-30", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-30", "task": "Ina is op die boot" },
-
-  { "date": "2025-12-31", "task": "Vandag is die laaste dag van 2025!" },
-  { "date": "2025-12-31", "task": "Jacques is in Struisbaai" },
-  { "date": "2025-12-31", "task": "Ina is op die boot" },
-
-  { "date": "2026-01-01", "task": "Vandag is die Eerste dag van die Nuwe jaar 2026!" },
-  { "date": "2026-01-02", "task": "Jacques is in Struisbaai"},
-  { "date": "2026-01-02", "task": "Ina is op die boot" },
-
-  { "date": "2026-01-03", "task": "Jacques is in Struisbaai"},
-  { "date": "2026-01-03", "task": "Ina is op die boot" }
-
+  { "date": "2026-01-05", "task": "Jacques is in Struisbaai"},
+  { "date": "2026-01-05", "task": "Ina is op die boot" }
 ]
 
