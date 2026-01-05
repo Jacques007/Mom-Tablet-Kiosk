@@ -1,0 +1,43 @@
+
+.clock-wrap {
+  display: inline-block;
+  /* Adjust size for tablet — tweak as needed */
+  width: min(40vw, 300px);
+  height: auto;
+}
+
+#analog-clock {
+  width: 100%;
+  height: auto;
+}
+
+/* Light theme */
+.clock-face { fill: #fff; stroke: #ccc; stroke-width: 1; }
+.mark { fill: #333; }
+.hand { stroke-linecap: round; transform-origin: 50px 50px; }
+.hand.hour   { stroke: #222; stroke-width: 2.8; }
+.hand.minute { stroke: #333; stroke-width: 2.2; }
+.hand.second { stroke: #e53935; stroke-width: 1.4; }
+.cap { fill: #333; }
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  .clock-face { fill: #121212; stroke: #333; }
+  .mark { fill: #ddd; }
+  .hand.hour   { stroke: #eee; }
+  .hand.minute { stroke: #ddd; }
+  .hand.second { stroke: #ff6b6b; }
+  .cap { fill: #ddd; }
+}
+
+/* Visually hidden (accessible fallback) */
+.sr-only {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
