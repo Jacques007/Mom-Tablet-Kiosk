@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="styles\contacts.css"> <!-- Kontak Jacques & Hannelie -->
 	<link rel="stylesheet" href="styles\tasks.css"> <!-- Daaglikse Takies -->
 	<link rel="stylesheet" href="styles\jigsaw.css"> <!-- jigsaw -->
+	<link rel="stylesheet" href="styles\clock.css"> <!-- analag clock -->
 	
 </head>
   
@@ -129,7 +130,38 @@
     <!-- <h1>Nuus vir vandag?</h1> --!>
     
     <p id="date" style="font-size: 3rem ; font-weight: bold; text-align: center; color: blue;"></p>
-	<div id="time" style="font-size: 3rem ; font-weight: bold; text-align: center; color: blue;"></div>
+	
+	<!-- <div id="time" style="font-size: 3rem ; font-weight: bold; text-align: center; color: blue;"></div> -->
+
+
+	
+<div class="clock-wrap" aria-label="Current time">
+  <!-- Accessible digital fallback (visually hidden but available to screen readers) -->
+  <div id="digital-time" class="sr-only" aria-live="polite"></div>
+
+  <!-- SVG analog clock -->
+  <svg id="analog-clock" viewBox="0 0 100 100" role="img" aria-hidden="true">
+    <!-- Clock face -->
+    <circle cx="50" cy="50" r="48" class="clock-face"/>
+    <!-- Hour marks -->
+    <g class="marks">
+      <!-- 12 marks -->
+      <!-- We rotate a single mark group 12 times via JS -->
+      <rect x="49.5" y="5" width="1" height="6" rx="0.5" class="mark"/>
+    </g>
+    <!-- Hands -->
+    <line id="hour-hand"   x1="50" y1="50" x2="50" y2="30" class="hand hour"/>
+    <line id="minute-hand" x1="50" y1="50" x2="50" y2="20" class="hand minute"/>
+    <line id="second-hand" x1="50" y1="50" x2="50" y2="16" class="hand second"/>
+    <!-- Center cap -->
+    <circle cx="50" cy="50" r="1.8" class="cap"/>
+  </svg>
+</div>
+
+
+
+
+	
 	
 	<br>  <!-- Blank line -->
 
