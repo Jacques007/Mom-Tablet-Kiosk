@@ -6,11 +6,11 @@
   { "date": "2025-12-28", "task": "Hannelie tel my 12 uur op om by haar te gaan eet" },
 
 
-  { "date": "2026-01-05", "task": "Die skoonmakers kom nie vandag nie!"},
+  { "date": "2026-01-05", "task": ">>  Die skoonmakers kom nie vandag nie! <<"},
   { "date": "2026-01-05", "task": "Jacques is in Struisbaai"},
   { "date": "2026-01-05", "task": "Ina is op die boot" },
 
-  { "date": "2026-01-06", "task": "Hannelie tel my 9 uur op vir dokter afspraak!"},
+  { "date": "2026-01-06", "task": ">> Hannelie tel my 9 uur op vir dokter afspraak! <<"},
   { "date": "2026-01-06", "task": "Jacques is in Struisbaai"},
   { "date": "2026-01-06", "task": "Ina is op die boot" }
 ]
