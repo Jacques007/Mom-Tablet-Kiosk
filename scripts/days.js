@@ -3,7 +3,7 @@
                     "Julie", "Augustus", "September", "Oktober", "November", "Desember"];
 
         const dtoday = new Date();
-        const dd = String(dtoday.getDate()).padStart(2, '0');
+        const dd = String(dtoday.getDate());
         const dayName = days[dtoday.getDay()];
         const mmm = months[dtoday.getMonth()];
         const ccyy = dtoday.getFullYear();
@@ -14,7 +14,7 @@
         const tomorrow = new Date(dtoday);
         tomorrow.setDate(dtoday.getDate() + 1); // Add 1 day
         const tdayName = days[tomorrow.getDay()];
-        const tdd = String(tomorrow.getDate()).padStart(2, '0');
+        const tdd = String(tomorrow.getDate());
         const tmmm = months[tomorrow.getMonth()];
         const tccyy = tomorrow.getFullYear();
         
