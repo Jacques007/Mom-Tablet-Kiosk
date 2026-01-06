@@ -95,7 +95,7 @@ function playVideo(videoId, video) {
     <iframe
       width="100%"
       height="360"
-      src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1&controls=1&start_radio=1"
+      src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1&controls=1&start_radio=1"
       frameborder="0"
       allow="encrypted-media; picture-in-picture"
       allowfullscreen>
