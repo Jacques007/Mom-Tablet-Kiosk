@@ -1,40 +1,10 @@
 {
   "videos": [
      {
-      "date": "2025-12-31",
-      "title": "Bobby Helms",
-      "description": "Jingle Bells",
-      "videoId": "Z0ajuTaHBtM"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Bing Cosby",
-      "description": "It is looking like Christmas",
-      "videoId": "C8JS51FTW6w"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Bony M",
-      "description": "Merry Christmas",
-      "videoId": "BDFCRcWTkw4"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Celine Dion",
-      "description": "So this is Christmas",
-      "videoId": "Spj5hXcJrSU"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Theuns Jordaan",
-      "description": "Country Medley",
-      "videoId": "edvMz6feBys"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Manie Jackson",
-      "description": "Die Hemel Weet",
-      "videoId": "Axu8yTgs7JY"
+      "date": "2026-01-13",
+      "title": "Jim Reeves",
+      "description": "Adios Amigo",
+      "videoId": "ucvcoWMFmW8"
     },
     {
       "date": "2025-12-31",
@@ -44,21 +14,9 @@
     },
     {
       "date": "2025-12-31",
-      "title": "Janita Claassen",
-      "description": "Rolbos van verlange",
-      "videoId": "gHxF9xz2wgU"
-    },
-    {
-      "date": "2025-12-31",
       "title": "Rina Hugo",
       "description": "Hoor jy my stem",
       "videoId": "xfmla9YPnyw"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Theuns Jordaan & Juanita",
-      "description": "Bring Jou Hart",
-      "videoId": "nZ492w9MnBI"
     },
     {
       "date": "2025-12-31",
@@ -68,51 +26,9 @@
     },
     {
       "date": "2025-12-31",
-      "title": "Andriette",
-      "description": "Sewe Oseane",
-      "videoId": "vWvQisgIUJc"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Skaidimusic",
-      "description": "Cottonfields back Home",
-      "videoId": "8zsOPeVgrk0"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Ricus Nel",
-      "description": "Medley",
-      "videoId": "B8ySJBYpgr8"
-    },
-    {
-      "date": "2025-12-31",
       "title": "Ray Dillan",
       "description": "Jessica",
       "videoId": "_l7hgQ_K3IM"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Jakkie Louw",
-      "description": "Drie Pikkewyne",
-      "videoId": "5UEiLLT5KH8"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Mania Jackson & Ander",
-      "description": "Rhinestone Medley",
-      "videoId": "J2OGRme5lq4"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Theuns Jordaan",
-      "description": "Neil Diamond Medley",
-      "videoId": "9KTuD3KKC_8"
-    },
-    {
-      "date": "2025-12-31",
-      "title": "Juanita du Plesis",
-      "description": "Gaan Groot",
-      "videoId": "zBERfWvmyRE"
     }
   ]
 }
