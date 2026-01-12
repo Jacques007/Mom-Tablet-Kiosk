@@ -5,11 +5,12 @@
   { "date": "2025-12-24", "task": "Ina is in Engeland" },
   { "date": "2025-12-28", "task": "Hannelie tel my 12 uur op om by haar te gaan eet" },
 
-  { "date": "2026-01-06", "task": ">> Hannelie tel my 9 uur op vir dokter afspraak!"},
-  { "date": "2026-01-06", "task": "Jacques is in Struisbaai"},
-  { "date": "2026-01-06", "task": "Ina is op die boot" },
 
-  { "date": "2026-01-07", "task": "Jacques is in Struisbaai"},
-  { "date": "2026-01-07", "task": "Ina is op die boot" }
+  { "date": "2026-01-13", "task": "Hannelie tel my kwart oor 10 op vir hare by Nadia half 11"},
+  { "date": "2026-01-13", "task": "Ina is siek" },
+
+  { "date": "2026-01-14", "task": "Hannelie neem my na die oefeninge by die saal" },
+  { "date": "2026-01-14", "task": "Ina is siek" }
+  
 ]
 
